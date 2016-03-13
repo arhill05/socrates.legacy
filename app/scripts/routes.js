@@ -9,7 +9,7 @@
  */
 angular.module('angularfireApp')
 
-  .config(['$routeProvider', function($routeProvider) {
+  .config(['$routeProvider',  function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -29,4 +29,5 @@ angular.module('angularfireApp')
       })
       
       .otherwise({redirectTo: '/'});
+      
   }]);

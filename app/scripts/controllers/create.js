@@ -4,7 +4,7 @@ angular.module('angularfireApp')
     $scope.sessions = $firebaseArray(Ref.child('sessions').limitToLast(10));
     // display any errors
     $scope.sessions.$loaded().catch(alert);
-    $scope.id = "testing456";
+    $scope.id = "";
     // provide a method for adding a message
     $scope.addSession = function(){
         var session = {

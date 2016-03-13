@@ -27,6 +27,8 @@ angular.module('angularfireApp')
         $scope.questions.$save(question);
         this.disabled = true;
         $('#' + question.$id).css("pointer-events", "none");
+        $('#' + question.$id).css("color", "blue");
+        $('#' + question.$id).css("font-weight", "bolder");
        
         
     }

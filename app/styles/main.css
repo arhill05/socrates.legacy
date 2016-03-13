@@ -7,7 +7,7 @@
 
 body {
   padding: 0;
-  font-size: 300% !important;
+  font-size: 200% !important;
 }
 
 .button-hover:hover{
@@ -15,7 +15,13 @@ body {
     font-size: 125%;
 }
 
+.remove-hover{
+    font-size: 75%;
+}
 
+.remove-hover:hover{
+    font-size: 100%
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

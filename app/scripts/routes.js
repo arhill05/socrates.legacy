@@ -27,6 +27,14 @@ angular.module('angularfireApp')
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
       })
+      .when('/admin/sessions', {
+        templateUrl: 'views/adminSessions.html',
+        controller: 'AdminSessionsCtrl'
+      })
+      .when('/admin/sessions/:sessionID', {
+        templateUrl: 'views/adminQuestions.html',
+        controller: 'AdminQuestionsCtrl'
+      })
       
       .otherwise({redirectTo: '/'});
       

@@ -14,8 +14,10 @@ angular.module('angularfireApp')
             disabled: false
         }
         $scope.questions.$add(question);
+        $scope.text = "";
         //Ref.child("sessions/" + session.id).set(session);
     }
+   
     
     $scope.upvoteQuestion = function(question){
         //var questionToUpvote = $scope.questions.$getRecord(question.$key)

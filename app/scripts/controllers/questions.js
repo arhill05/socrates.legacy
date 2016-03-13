@@ -10,7 +10,8 @@ angular.module('angularfireApp')
     $scope.addQuestion = function(){
         var question = {
             text: $scope.text,
-            upvotes: 0
+            upvotes: 0,
+            disabled: false
         }
         $scope.questions.$add(question);
         //Ref.child("sessions/" + session.id).set(session);
@@ -18,9 +19,14 @@ angular.module('angularfireApp')
     
     $scope.upvoteQuestion = function(question){
         //var questionToUpvote = $scope.questions.$getRecord(question.$key)
+        var key = $scope.questions.$indexFor(question.$id)
+        $scope.questions[key].disabled = true;
         question.upvotes = question.upvotes + 1;
         $scope.questions.$save(question);
-        $('#upvoteButton').css("pointer-events", "none");
+        this.disabled = true;
+        $('#' + question.$id).css("pointer-events", "none");
+       
+        
     }
 
     function alert(msg) {

@@ -6,7 +6,7 @@
     <li style="margin: 1px" class="list-group-item">
         <span>{{question.text}}</span>
         <span style="float: right;">{{question.upvotes}}
-        <span id="upvoteButton" class="glyphicon glyphicon-menu-up button-hover" style="margin: 0 auto;" ng-click="upvoteQuestion(question)"></span>
+        <span id="{{question.$id}}" class="glyphicon glyphicon-menu-up button-hover" style="margin: 0 auto;" ng-click="upvoteQuestion(question)" ng-disabled="question.disabled"></span>
         </span>
 </ul>
 

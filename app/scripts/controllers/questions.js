@@ -20,6 +20,7 @@ angular.module('angularfireApp')
         //var questionToUpvote = $scope.questions.$getRecord(question.$key)
         question.upvotes = question.upvotes + 1;
         $scope.questions.$save(question);
+        $('#upvoteButton').css("pointer-events", "none");
     }
 
     function alert(msg) {

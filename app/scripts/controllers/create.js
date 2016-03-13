@@ -12,7 +12,7 @@ angular.module('angularfireApp')
             questions: {}
         }
         Ref.child("sessions/" + session.id).set(session);
-        $location.path('/chat');
+        $location.path('/sessions/' + session.id);
     }
 
     function alert(msg) {

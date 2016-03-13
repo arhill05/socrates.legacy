@@ -1,7 +1,12 @@
-<input ng-model="text">
-<button class="btn btn-default" ng-click="addQuestion()">Add Question</button>
-<div ng-repeat="question in questions | filter: text | orderBy:'upvotes' | reverse">
-    {{question.text}}
-    {{question.upvotes}}<button ng-click="upvoteQuestion(question)">Upvote</button>
+<div class="input-group" style="margin: 7px;">
+    <input style="width: 70%; height: 65px; display: table;" class="form-control" ng-model="text">
+    <span; class="input-group-btn"><button class="btn btn-primary btn-lg"  ng-click="addQuestion()">Add Question</button></span>
 </div>
+<ul style="margin: 1px;" class="list-group" ng-repeat="question in questions | filter: text | orderBy:'upvotes' | reverse">
+    <li style="margin: 1px" class="list-group-item">
+        <span>{{question.text}}</span>
+        <span style="float: right;">{{question.upvotes}}
+        <span id="upvoteButton" class="glyphicon glyphicon-menu-up button-hover" style="margin: 0 auto;" ng-click="upvoteQuestion(question)"></span>
+        </span>
+</ul>
 

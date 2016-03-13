@@ -15,14 +15,18 @@ angular.module('angularfireApp')
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-
-      .when('/chat', {
-        templateUrl: 'views/chat.html',
-        controller: 'ChatCtrl'
+      .when('/sessions/:sessionID', {
+        templateUrl: 'views/questions.html',
+        controller: 'QuestionsCtrl'
+      })
+      .when('/sessions', {
+        templateUrl: 'views/sessions.html',
+        controller: 'SessionsCtrl'
       })
       .when('/create', {
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
       })
+      
       .otherwise({redirectTo: '/'});
   }]);

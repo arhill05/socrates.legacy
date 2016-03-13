@@ -1,5 +1,5 @@
 angular.module('angularfireApp')
-  .controller('CreateCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
+  .controller('CreateCtrl', function ($scope, Ref, $firebaseArray, $timeout, $location) {
     // synchronize a read-only, synchronized array of messages, limit to most recent 10
     $scope.sessions = $firebaseArray(Ref.child('sessions').limitToLast(10));
     // display any errors
@@ -12,6 +12,7 @@ angular.module('angularfireApp')
             questions: {}
         }
         Ref.child("sessions/" + session.id).set(session);
+        $location.path('/chat');
     }
 
     function alert(msg) {

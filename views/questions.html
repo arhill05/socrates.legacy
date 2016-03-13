@@ -1,0 +1,1 @@
+<input ng-model="text"> <button class="btn btn-default" ng-click="addQuestion()">Add Question</button> <div ng-repeat="question in questions | filter: text | orderBy:'upvotes' | reverse"> {{question.text}} {{question.upvotes}}<button ng-click="upvoteQuestion(question)">Upvote</button> </div>

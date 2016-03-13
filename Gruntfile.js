@@ -36,7 +36,7 @@ module.exports = function (grunt) {
         },
         pages: {
         options: {
-            remote: 'git@github.com:arhill05/socratesappv2.git',
+            remote: 'https://github.com/arhill05/socratesappv2.git',
             branch: 'gh-pages'
             }
         }
@@ -459,4 +459,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  
+  grunt.b
 };

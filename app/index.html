@@ -36,12 +36,12 @@
 
           </div>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderController as header">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
+              <li ng-class="{ active: isActive('/')}"><a href="#/">Home</a></li>
               <!-- //angularfire -->
-              <li><a ng-href="#/sessions">Sessions</a></li>
+              <li ng-class="{ active: isActive('/sessions')}"><a ng-href="#/sessions">Sessions</a></li>
 
             </ul>
           </div>
@@ -95,6 +95,7 @@
         <script src="scripts/controllers/create.js"></script>
         <script src="scripts\filters\reverse.js"></script>
         <script src="scripts/controllers/questions.js"></script>
+        <script src="scripts/controllers/header.js"></script>
         <script src="scripts\routes.js"></script>
         <!-- endbuild -->
 </body>

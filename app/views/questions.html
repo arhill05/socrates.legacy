@@ -6,10 +6,6 @@
     </div>
   </div>
 
-<!--<div class="input-group" style="margin: 7px;">
-    <input class="form-control" ng-model="text">
-    <span class="input-group-button"><button class="btn btn-primary" ng-click="addQuestion()">Add Question</button></span>
-</div>-->
 <ul style="margin: 1px;" class="list-group" ng-repeat="question in questions | filter: text | orderBy:'upvotes' | reverse">
     <li style="margin: 1px" class="list-group-item">
         <span>{{question.text}}</span>
@@ -19,3 +15,4 @@
     </li>
 </ul>
 
+<img id="QR" src="#" />

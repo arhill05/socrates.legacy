@@ -30,6 +30,14 @@ angular.module('angularfireApp')
        
         
     }
+    
+
+    function callQR(){ 
+        var url= 'http://www.socratesapp.co/%23/sessions/' + $routeParams.sessionID; 
+        url=encodeURI(url); 
+        var fullUrl="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl="+url; 
+        jQuery("#QR").attr("src",fullUrl); 
+    }
 
     function alert(msg) {
       $scope.err = msg;
@@ -37,4 +45,11 @@ angular.module('angularfireApp')
         $scope.err = null;
       }, 5000);
     }
+    
+        $(document).ready(function(){ 
+        callQR(); 
+    }); 
+    
   });
+  
+  

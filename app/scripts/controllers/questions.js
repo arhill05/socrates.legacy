@@ -16,7 +16,7 @@ angular.module('angularfireApp')
         $scope.questions.$add(question);
         $scope.text = "";
         //Ref.child("sessions/" + session.id).set(session);
-    }
+    };
    
     
     $scope.upvoteQuestion = function(question){
@@ -27,11 +27,18 @@ angular.module('angularfireApp')
         $scope.questions.$save(question);
         this.disabled = true;
         $('#' + question.$id).css("pointer-events", "none");
-       
-        
+             
+    };
+    
+    $scope.displayPopup = function(){
+        $('#myModal').show();
+
     }
     
+    $scope.closePopup = function(){
+        $('#myModal').hide();
 
+    }
     function callQR(){ 
         var url= 'http://www.socratesapp.co/%23/sessions/' + $routeParams.sessionID; 
         url=encodeURI(url); 

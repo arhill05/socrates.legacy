@@ -14,5 +14,20 @@
         </span>
     </li>
 </ul>
+<button class="btn btn-primary btn-lg" style="float:right;" type="button" ng-click="displayPopup()">QR Code</button>
 
-<img id="QR" src="#" />
+<div id="myModal" style="width: 35%; position: fixed; left: 30%; padding-top: 100px" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close" ng-click="closePopup()">×</span>
+      <h2>QR Code</h2>
+    </div>
+    <div class="modal-body">
+      Scan this QR code to be added to the session!<br>
+      <img style="display: block; margin: 0 auto;" class="img-thumbnail" id="QR" src="#" />
+    <div class="modal-footer"></div>
+    </div>
+  </div>
+
+</div>
+

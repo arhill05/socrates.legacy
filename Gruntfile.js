@@ -32,7 +32,7 @@ module.exports = function (grunt) {
         dir: 'dist',
         commit: true,
         push: true,
-        message: 'adding to gh-pages'
+        message: 'Aligned develop/master/gh-pages'
         },
         pages: {
         options: {

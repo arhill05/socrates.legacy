@@ -1,0 +1,8 @@
+<h2>Sessions</h2>
+<div class="container-fluid">
+    <a class="btn btn-primary" ng-href="#/create">Add a session</a>
+    <ul class="list-group">
+        <li class="list-group-item col-xs-12 text-center" ng-repeat="session in sessions"><a ng-href="#/admin/sessions/{{session.$id}}">{{session.$id}}</a><span style="float: right; color: red" class="glyphicon glyphicon-remove remove-hover"
+            ng-click="sessions.$remove(session)"></li>
+</ul>
+</div>

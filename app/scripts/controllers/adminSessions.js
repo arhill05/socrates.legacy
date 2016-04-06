@@ -1,14 +1,14 @@
 'use strict';
 /**
  * @ngdoc function
- * @name angularfireApp.controller:SessionsCtrl
+ * @name angularfireApp.controller:AdminSessionsCtrl
  * @description
- * # SessionsCtrl
- * Get Sessions
+ * # AdminSessionsCtrl
+ * Display ALL sessions to admin
  */
 angular.module('angularfireApp')
-  .controller('SessionsCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
-    // get sessions, limit to last 10
+  .controller('AdminSessionsCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
+    // get sessions, but only get the last 10
     $scope.sessions = $firebaseArray(Ref.child('sessions').limitToLast(10));
 
     // display any errors

@@ -1,28 +1,18 @@
 'use strict';
 /**
  * @ngdoc function
- * @name angularfireApp.controller:ChatCtrl
+ * @name angularfireApp.controller:AdminSessionsCtrl
  * @description
- * # ChatCtrl
- * A demo of using AngularFire to manage a synchronized list.
+ * # AdminSessionsCtrl
+ * Display ALL sessions to admin
  */
 angular.module('angularfireApp')
   .controller('AdminSessionsCtrl', function ($scope, Ref, $firebaseArray, $timeout) {
-    // synchronize a read-only, synchronized array of messages, limit to most recent 10
+    // get sessions, but only get the last 10
     $scope.sessions = $firebaseArray(Ref.child('sessions').limitToLast(10));
 
     // display any errors
     $scope.sessions.$loaded().catch(alert);
-
-    // provide a method for adding a message
-    $scope.addMessage = function(newMessage) {
-      if( newMessage ) {
-        // push a message to the end of the array
-        $scope.messages.$add({text: newMessage})
-          // display any errors
-          .catch(alert);
-      }
-    };
 
     function alert(msg) {
       $scope.err = msg;
@@ -31,19 +21,3 @@ angular.module('angularfireApp')
       }, 5000);
     }
   });
-  
-//   angular.module('socratesApp')
-//     .controller('MainCtrl', function($scope, $firebaseObject) {
-//         var urlsuffix = "";
-//         var ref = new Firebase("https://burning-heat-1866.firebaseio.com/sessions/");
-//         var ref2 = new Firebase("http://burning-heat-1866.firebaseio.com/sessions/" + )
-//         $scope.sessions = $firebaseArray(ref);
-//         $scope.questions = $firebaseArray(ref2);
-//             
-//             
-//             
-//             
-//             
-//             
-//         });
-

@@ -1,12 +1,12 @@
 angular.module('angularfireApp')
   .controller('AdminQuestionsCtrl', function ($scope, Ref, $firebaseArray, $timeout, $routeParams) {
-    // synchronize a read-only, synchronized array of messages, limit to most recent 10
-    $scope.questions = $firebaseArray(Ref.child('sessions/' + $routeParams.sessionID + '/Questions'));  
+    // Get questions from current session
+    $scope.questions = $firebaseArray(Ref.child('sessions/' + $routeParams.sessionID + '/Questions'));
+    
     // display any errors
-   
-    //$scope.questions = $scope.sessions.child($routeParams.sessionID).child('questions');
     $scope.questions.$loaded().catch(alert);
-    // provide a method for adding a message
+
+    // provide a method for adding a question
     $scope.addQuestion = function(){
         var question = {
             text: $scope.text,
@@ -15,9 +15,10 @@ angular.module('angularfireApp')
         }
         $scope.questions.$add(question);
         $scope.text = "";
-        //Ref.child("sessions/" + session.id).set(session);
     }
-    
+
+    // provide a method for upvoting a question. Disable the question after
+    // being clicked (client side only at the moment)
     $scope.upvoteQuestion = function(question){
         //var questionToUpvote = $scope.questions.$getRecord(question.$key)
         var key = $scope.questions.$indexFor(question.$id)
@@ -28,8 +29,8 @@ angular.module('angularfireApp')
         $('#' + question.$id).css("pointer-events", "none");
         $('#' + question.$id).css("color", "blue");
         $('#' + question.$id).css("font-weight", "bolder");
-       
-        
+
+
     }
 
     function alert(msg) {

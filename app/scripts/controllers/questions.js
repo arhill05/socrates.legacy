@@ -3,10 +3,9 @@ angular.module('angularfireApp')
         // synchronize a read-only, synchronized array of messages, limit to most recent 10
         $scope.questions = $firebaseArray(Ref.child('sessions/' + $routeParams.sessionID + '/Questions'));
         // display any errors
-
-        //$scope.questions = $scope.sessions.child($routeParams.sessionID).child('questions');
         $scope.questions.$loaded().catch(alert);
-        // provide a method for adding a message
+
+        // provide a method for adding a question
         $scope.addQuestion = function() {
             var question = {
                 text: $scope.text,
@@ -15,11 +14,9 @@ angular.module('angularfireApp')
             }
             $scope.questions.$add(question);
             $scope.text = "";
-            //Ref.child("sessions/" + session.id).set(session);
         }
-        
 
-
+        // provide method for upvoting questions
         $scope.upvoteQuestion = function(question) {
             //var questionToUpvote = $scope.questions.$getRecord(question.$key)
             var key = $scope.questions.$indexFor(question.$id)
@@ -30,18 +27,14 @@ angular.module('angularfireApp')
             $('#' + question.$id).css("pointer-events", "none");
             $('#' + question.$id).css("color", "blue");
             $('#' + question.$id).css("font-weight", "bolder");
-
-
         }
 
-
-           $scope.callQR = function (){ var url = document.URL; 
+          // Generate a unique QR code for this session
+           $scope.callQR = function (){ var url = document.URL;
             var url = encodeURIComponent($routeParams.sessionID);
-            var fullUrl = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://www.socratesapp.co/%23/sessions/"+ url; 
-            $("#QR").attr("src", fullUrl); }
-            
-
-     
+            var fullUrl = "https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://www.socratesapp.co/%23/sessions/"+ url;
+            $("#QR").attr("src", fullUrl);
+          }           
 
         function alert(msg) {
             $scope.err = msg;

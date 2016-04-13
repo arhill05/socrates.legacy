@@ -1,11 +1,13 @@
 angular.module('angularfireApp')
   .controller('CreateCtrl', function ($scope, Ref, $firebaseArray, $timeout, $location) {
-    // synchronize a read-only, synchronized array of messages, limit to most recent 10
+    // get sessions, limit to last 10
     $scope.sessions = $firebaseArray(Ref.child('sessions').limitToLast(10));
+
     // display any errors
     $scope.sessions.$loaded().catch(alert);
     $scope.id = "";
-    // provide a method for adding a message
+    
+    // provide a method for adding a session
     $scope.addSession = function(){
         var session = {
             id: $scope.id,

@@ -17,7 +17,12 @@ angular.module('angularfireApp')
       })
       .when('/sessions/:sessionID', {
         templateUrl: 'views/questions.html',
-        controller: 'QuestionsCtrl'
+        controller: 'QuestionsCtrl',
+        resolve: {
+          "currentAuth": ["Auth", function(Auth){
+            return Auth.$requireAuth();
+          }]
+        }
       })
       .when('/sessions', {
         templateUrl: 'views/sessions.html',
@@ -34,6 +39,10 @@ angular.module('angularfireApp')
       .when('/admin/sessions/:sessionID', {
         templateUrl: 'views/adminQuestions.html',
         controller: 'AdminQuestionsCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       
       .otherwise({redirectTo: '/'});

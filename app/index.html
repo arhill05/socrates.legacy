@@ -13,6 +13,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="..\bower_components\bootstrap\dist\css\bootstrap.css">
+    <link rel="stylesheet" href="..\bower_components\toastr\toastr.min.css">
     <link rel="stylesheet" href="styles/header.css">
     <!-- endbuild -->
   </head>
@@ -44,6 +45,7 @@
               <li ng-class="{ active: isActive('/')}"><a href="#/">home</a></li>
               <!-- //angularfire -->
               <li ng-class="{ active: isActive('/sessions')}" ><a ng-href="#/sessions">sessions</a></li>
+              <li ng-class="{ active: isActive('/login')}" ><a ng-href="#/login">login</a></li>
 
             </ul>
           </div>
@@ -93,6 +95,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/angularfire/config.js"></script>
         <script src="scripts/angularfire/firebase.ref.js"></script>
+        <script src="scripts/angularfire/auth.js"></script>
         <script src="scripts\controllers\sessions.js"></script>
         <script src="scripts/controllers/create.js"></script>
         <script src="scripts\filters\reverse.js"></script>
@@ -101,6 +104,8 @@
         <script src="scripts/controllers/adminQuestions.js"></script>
         <script src="scripts\routes.js"></script>
         <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        
         <!-- endbuild -->
 </body>
 </html>

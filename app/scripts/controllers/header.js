@@ -1,3 +1,4 @@
+'use strict';
 angular.module('angularfireApp')
   .controller('HeaderCtrl', function($scope, $location) 
 { 

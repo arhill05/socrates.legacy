@@ -13,11 +13,21 @@ angular.module('angularfireApp')
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: {
+          "currentAuth": ["Auth", function(Auth){
+            return Auth.$requireAuth();
+          }]
+        }
       })
       .when('/sessions/:sessionID', {
         templateUrl: 'views/questions.html',
-        controller: 'QuestionsCtrl'
+        controller: 'QuestionsCtrl',
+        resolve: {
+          "currentAuth": ["Auth", function(Auth){
+            return Auth.$requireAuth();
+          }]
+        }
       })
       .when('/sessions', {
         templateUrl: 'views/sessions.html',
@@ -35,7 +45,15 @@ angular.module('angularfireApp')
         templateUrl: 'views/adminQuestions.html',
         controller: 'AdminQuestionsCtrl'
       })
-      
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/postLogin', {
+        templateUrl: 'views/postLogin.html',
+        controller: 'PostLoginCtrl'
+      })
+
       .otherwise({redirectTo: '/'});
-      
+
   }]);

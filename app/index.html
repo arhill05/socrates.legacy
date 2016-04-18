@@ -8,11 +8,13 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="..\bower_components\bootstrap\dist\css\bootstrap.css">
+    <link rel="stylesheet" href="..\bower_components\toastr\toastr.min.css">
     <link rel="stylesheet" href="styles/header.css">
     <!-- endbuild -->
   </head>
@@ -38,13 +40,13 @@
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl as header">
-
+              <span style="float:right; padding-top: 10px;">logged in as: {{$root.username}}</span>
             <ul class="nav navbar-nav">
               <img src="images/logo.jpg" class="small-logo img-rounded img-fluid"></img>
               <li ng-class="{ active: isActive('/')}"><a href="#/">home</a></li>
               <!-- //angularfire -->
               <li ng-class="{ active: isActive('/sessions')}" ><a ng-href="#/sessions">sessions</a></li>
-
+              <li ng-class="{ active: isActive('/login')}" ><a ng-href="#/login">login</a></li>
             </ul>
           </div>
         </div>
@@ -85,6 +87,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -93,6 +96,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/angularfire/config.js"></script>
         <script src="scripts/angularfire/firebase.ref.js"></script>
+        <script src="scripts/angularfire/auth.js"></script>
         <script src="scripts\controllers\sessions.js"></script>
         <script src="scripts/controllers/create.js"></script>
         <script src="scripts\filters\reverse.js"></script>
@@ -101,6 +105,9 @@
         <script src="scripts/controllers/adminQuestions.js"></script>
         <script src="scripts\routes.js"></script>
         <script src="scripts/controllers/header.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/postLogin.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

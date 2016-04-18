@@ -40,7 +40,7 @@
           </div>
 
           <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="HeaderCtrl as header">
-              logged in as: {{username}}
+              <span style="float:right; padding-top: 10px;">logged in as: {{$root.username}}</span>
             <ul class="nav navbar-nav">
               <img src="images/logo.jpg" class="small-logo img-rounded img-fluid"></img>
               <li ng-class="{ active: isActive('/')}"><a href="#/">home</a></li>
@@ -106,6 +106,7 @@
         <script src="scripts\routes.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/postLogin.js"></script>
 
         <!-- endbuild -->
 </body>

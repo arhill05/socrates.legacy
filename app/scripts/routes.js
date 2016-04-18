@@ -49,6 +49,10 @@ angular.module('angularfireApp')
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
+      .when('/postLogin', {
+        templateUrl: 'views/postLogin.html',
+        controller: 'PostLoginCtrl'
+      })
 
       .otherwise({redirectTo: '/'});
 

@@ -1,5 +1,6 @@
 /* Custom CSS - Quincy */
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 
 body.ng-scope {
@@ -26,6 +27,30 @@ body.ng-scope {
   max-width: 160px;
   box-shadow: 2px 2px 2px 2px black;
   margin: 0 auto;
+}
+
+.sessions-main-brand {
+    font-family: "Poiret One";
+    font-size: 3.5em;
+    color: white;
+  }
+
+.panel-body {
+  background-color: #007dba;
+  font-size: 2.2em;
+  font-family: "Montserrat", Arial;
+  border: 8px white;
+
+}
+
+.session-link {
+  color: white;
+  text-decoration: none !important;
+
+}
+
+.session-link:hover {
+  color: #ddf0f1;
 }
 
 .main-brand {

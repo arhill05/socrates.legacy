@@ -1,6 +1,6 @@
 angular.module('angularfireApp')
-    .controller('LoginCtrl', function ($scope, Ref, $firebaseArray, $timeout, $firebaseAuth, Auth) {
-        
+    .controller('LoginCtrl', function ($rootScope, $scope, Ref, $firebaseArray, $timeout, $firebaseAuth, Auth) {
+
         function authHandler(error, authData) {
             if (error) {
                 if (error.code = "INVALID_PASSWORD")
@@ -22,10 +22,20 @@ angular.module('angularfireApp')
                 password: $scope.password
             }).then(function(authData) {
                 $scope.authData = authData;
+                toastr.success('Logged in successfully!')
+                $scope.userPath = Ref.child('Users');
+                $scope.userPath.orderByChild('uid').equalTo($scope.authData.uid).on("child_added", function (snapshot) {
+                  $rootScope.username = snapshot.val().email
+                });
                 console.log("Successfully logged in with payload:", $scope.authData);
             }).catch(function(error) {
-                console.log(error)});
-            
+                console.log(error);
+                if (error.code = "INVALID_PASSWORD")
+                     toastr.error('Oops! Your password appears to be wrong.');
+                else
+                     console.log('Login Failed!', error);
+              });
+
         };
 
         $scope.signUp = function () {
@@ -45,7 +55,7 @@ angular.module('angularfireApp')
                                 console.log("The specified email is not a valid email.");
                                 break;
                             case "INVALID_PASSWORD":
-                               
+
                                 console.log("The specified email is not a valid email.");
                                 break;
                             default:

@@ -13,7 +13,12 @@ angular.module('angularfireApp')
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        resolve: {
+          "currentAuth": ["Auth", function(Auth){
+            return Auth.$requireAuth();
+          }]
+        }
       })
       .when('/sessions/:sessionID', {
         templateUrl: 'views/questions.html',
@@ -44,7 +49,7 @@ angular.module('angularfireApp')
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl'
       })
-      
+
       .otherwise({redirectTo: '/'});
-      
+
   }]);

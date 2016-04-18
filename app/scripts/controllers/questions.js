@@ -16,25 +16,28 @@ angular.module('angularfireApp')
 
         $scope.userPath.orderByChild('uid').equalTo($scope.auth.uid).on("child_added", function (snapshot) {
             $scope.user = snapshot.key();
-            console.log(snapshot.key());
-            console.log(snapshot.val());
-        });
+            $scope.username = snapshot.val().email;
+            var userQuestionsPath = Ref.child('Users/' + $scope.user).child('upvotedQuestions');
+            $scope.userQuestions = $firebaseArray(Ref.child('Users/' + $scope.user).child('upvotedQuestions'));
+            $scope.userQuestions.$loaded().then(function (userQuestions) {
+                console.log(userQuestions.length);
+                userQuestionsPath.once("value", function(snapshot){
+                  snapshot.forEach(function(childSnapshot){
+                    var questionKey = childSnapshot.key();
+                    var a = 0;
+                    for(var a; a < $scope.questions.length; a++)
+                    {
+                      if($scope.questions[a].$id == questionKey){
+                        $('#' + $scope.questions[a].$id).css('color', 'blue');
+                        $('#' + $scope.questions[a].$id).css('font-weight', 'bolder');
+                        $('#' + $scope.questions[a].$id).css('font-size', '125%');
+                      }
+                    }
+                  })
+                })
+            });
 
-        var userQuestionsPath = Ref.child('Users/' + $scope.user).child('upvotedQuestions');
-        $scope.userQuestions = $firebaseArray(Ref.child('Users/' + $scope.user).child('upvotedQuestions'));
-        $scope.userQuestions.$loaded().then(function (userQuestions) {
-            console.log(userQuestions.length);
         });
-
-        for (var j = 0; j < $scope.questions.length; k++) {
-            for (var k = 0; k < $scope.userQuestions.length; k++) {
-                if ($scope.questions[j].$id == $scope.userQuestions[k].$id) {
-                    $('#' + question.$id).css('color', 'blue');
-                    $('#' + question.$id).css('font-weight', 'bolder');
-                    $('#' + question.$id).css('font-size', '125%');
-                }
-            }
-        }
 
         // provide a method for adding a question
         $scope.addQuestion = function () {
@@ -51,7 +54,6 @@ angular.module('angularfireApp')
         $scope.upvoteQuestion = function (question) {
             var key = $scope.questions.$indexFor(question.$id);
             $scope.newQuestion = true;
-
 
             if ($scope.userQuestions.length == 0) {
                 question.upvotes = question.upvotes + 1;
@@ -81,6 +83,7 @@ angular.module('angularfireApp')
                     question.upvotes = question.upvotes + 1;
                     $('#' + question.$id).css('color', 'blue');
                     $('#' + question.$id).css('font-weight', 'bolder');
+                    $('#' + question.$id).css('font-size', '125%');
                     $scope.userPath.child($scope.user).child('upvotedQuestions/' + question.$id).set(question.$id);
                     $scope.questions.$save(question);
                     $scope.newQuestion = true;

@@ -1,3 +1,4 @@
+'use strict';
 angular.module('angularfireApp')
   .controller('CreateCtrl', function ($scope, Ref, $firebaseArray, $timeout, $location) {
     // get sessions, limit to last 10

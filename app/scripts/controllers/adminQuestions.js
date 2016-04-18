@@ -1,3 +1,4 @@
+'use strict';
 angular.module('angularfireApp')
   .controller('AdminQuestionsCtrl', function ($scope, Ref, $firebaseArray, $timeout, $routeParams) {
     // Get questions from current session

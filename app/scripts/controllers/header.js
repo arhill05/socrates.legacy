@@ -1,7 +1,8 @@
+'use strict';
 angular.module('angularfireApp')
-  .controller('HeaderCtrl', function($scope, $location) 
-{ 
-    $scope.isActive = function (viewLocation) { 
+  .controller('HeaderCtrl', function($scope, $location, $rootScope, globalUser)
+{
+    $scope.isActive = function (viewLocation) {
         return viewLocation === $location.path();
     };
-})
+});

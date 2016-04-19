@@ -35,12 +35,26 @@ body.ng-scope {
     color: white;
   }
 
+.sessions-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .panel-body {
-  background-color: #007dba;
+  background-color: #22afdc;
   font-size: 2.2em;
   font-family: "Montserrat", Arial;
-  border: 8px white;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 5px solid #ffffff;
+  box-shadow: 2px 5px 3px 0px #223322;
+}
 
+.panel-body:active {
+  font-size: 2.3em;
+  box-shadow: 0px 1px 0px 0px;
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
 }
 
 .session-link {
@@ -49,9 +63,7 @@ body.ng-scope {
 
 }
 
-.session-link:hover {
-  color: #ddf0f1;
-}
+
 
 .main-brand {
   font-family: "Poiret One";

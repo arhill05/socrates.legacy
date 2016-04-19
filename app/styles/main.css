@@ -29,6 +29,8 @@ body.ng-scope {
   margin: 0 auto;
 }
 
+/* Sessions page styling */
+
 .sessions-main-brand {
     font-family: "Poiret One";
     font-size: 3.5em;
@@ -62,6 +64,27 @@ body.ng-scope {
   text-decoration: none !important;
 
 }
+
+/* Admin Sessions styling */
+
+.session-remove {
+  color: #ff1919;
+  border: 2px solid white;
+  border-radius: 20px;
+  float:right;
+}
+
+.btn.btn-warning.add-session-button {
+  margin: 20px 185px 40px;
+}
+
+.add-session-button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+/* */
 
 
 

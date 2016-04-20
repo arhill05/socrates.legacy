@@ -60,7 +60,7 @@ angular.module('angularfireApp')
           var auth = Auth.$getAuth();
           var userSessions = User.getUserSessions(auth.uid);
           return userSessions;
-        }]
+        }],
       }
     })
 

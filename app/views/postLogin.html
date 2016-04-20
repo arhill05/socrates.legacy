@@ -1,9 +1,19 @@
 <div class="container">
     <div class="well lead container">Welcome {{$root.username}}!<span style="float: right;"><button class="btn btn-default" ng-click="logout()">Logout</button>
 <a class="btn btn-default" ng-href="#/create">Create Session</a></span></div>
-<div class="alert alert-warning col-xs-6 col-xs-offset-3"><p><strong>My Sessions</strong></p></div>
-    <ul class="list-group">
+<div class="row"><div class="alert alert-warning col-xs-6 col-xs-offset-3"><p><strong>My Sessions</strong></p></div></div>
+<div class="row col-xs-4 col-xs-offset-4">
+  <div class="progress" ng-hide="hideSessions">
+    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70"
+    aria-valuemin="0" aria-valuemax="100" style="width:70%">
+      Loading...
+    </div>
+  </div>
+</div>
+    <ul class="list-group" ng-show="hideSessions">
         <li class="list-group-item col-xs-12 text-center" ng-repeat="session in userSessions"><a ng-href="#/admin/sessions/{{session.$id}}">{{session.$id}}</a></li>
     </ul>
+
+
 
 </div>

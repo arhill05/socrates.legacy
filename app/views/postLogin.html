@@ -1,2 +1,9 @@
-Welcome {{$root.username}}!
-<button class="btn btn-danger" ng-click="logout()">Logout</button>
+<div class="container">
+    <div class="well lead container">Welcome {{$root.username}}!<span style="float: right;"><button class="btn btn-default" ng-click="logout()">Logout</button>
+<a class="btn btn-default" ng-href="#/create">Create Session</a></span></div>
+<div class="alert alert-warning col-xs-6 col-xs-offset-3"><p><strong>My Sessions</strong></p></div>
+    <ul class="list-group">
+        <li class="list-group-item col-xs-12 text-center" ng-repeat="session in userSessions"><a ng-href="#/admin/sessions/{{session.$id}}">{{session.$id}}</a></li>
+    </ul>
+
+</div>

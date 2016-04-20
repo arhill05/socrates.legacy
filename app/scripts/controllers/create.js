@@ -1,30 +1,36 @@
 'use strict';
 angular.module('angularfireApp')
-  .controller('CreateCtrl', function ($scope, Ref, $firebaseArray, $timeout, $location, Auth) {
+  .controller('CreateCtrl', function ($scope, Ref, $firebaseArray, $timeout, $location, Auth, User) {
     // get sessions, limit to last 10
-    $scope.sessions = $firebaseArray(Ref.child('sessions').limitToLast(10));
-
-      
+    var authData = Auth.$getAuth();
+    $scope.sessions = $firebaseArray(Ref.child('sessions').limitToLast(10));   
     $scope.sessions.$loaded().catch(alert);
     $scope.id = "";
-    var authData = Auth.$getAuth();
-     $scope.userPath.orderByChild('uid').equalTo($scope.auth.uid).on("child_added", function (snapshot) {
-            $scope.user = snapshot.key();
-            $scope.username = snapshot.val().email;
-            var userSessionsPath = Ref.child('Users/' + $scope.user).child('userSessions');
-     })
+    $scope.user = User.getUser(authData.uid);
+    $scope.userSessions = User.getUserSessions(authData.uid);
+    
+    
+    //  $scope.userPath.orderByChild('uid').equalTo($scope.auth.uid).on("child_added", function (snapshot) {
+    //         $scope.user = snapshot.key();
+    //         $scope.username = snapshot.val().email;
+    //         var userSessionsPath = Ref.child('Users/' + $scope.user).child('userSessions');
+    //  })
     
     
     // provide a method for adding a session
     $scope.addSession = function(){
+      var randomPin = Math.floor(1000 + Math.random() * 9000)
+      var pinNumber = randomPin.toString()
         var session = {
             id: $scope.id,
             questions: {},
-            pinNumber: Math.floor(1000 + Math.random() * 9000),
-            adminUser: ""
+            pinNumber: pinNumber,
+            adminUser: User.getUser(authData.uid)
             
         }
-        Ref.child("sessions/" + session.id).set(session);
+        var userSessionsPath = Ref.child('Users/' + $scope.user).child('userSessions');
+        Ref.child('sessions/' + session.id).set(session)
+        userSessionsPath.child(session.id).set(session);
         $location.path('/sessions/' + session.id);
     }
 

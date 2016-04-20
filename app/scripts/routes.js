@@ -31,7 +31,12 @@ angular.module('angularfireApp')
       })
       .when('/create', {
         templateUrl: 'views/create.html',
-        controller: 'CreateCtrl'
+        controller: 'CreateCtrl',
+        resolve: {
+          "currentAuth": ["Auth", function(Auth){
+            return Auth.$requireAuth();
+          }]
+        }
       })
       .when('/admin/sessions', {
         templateUrl: 'views/adminSessions.html',
@@ -50,7 +55,12 @@ angular.module('angularfireApp')
         controller: 'PostLoginCtrl',
         resolve: {
           "currentAuth": ["Auth", function(Auth){
-            return Auth.$requireAuth();
+            return Auth.$waitForAuth();
+          }],
+          "userSessions": ["User", "Auth", function(User, Auth){
+            var auth = Auth.$getAuth();
+            var userSessions = User.getUserSessions(auth.uid);
+            return userSessions;
           }]
         }
       })

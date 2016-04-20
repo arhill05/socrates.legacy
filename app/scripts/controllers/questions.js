@@ -1,9 +1,13 @@
 'use strict';
 
 angular.module('angularfireApp')
-    .controller('QuestionsCtrl', function ($scope, Ref, $firebaseArray, $firebaseAuth, $timeout, $routeParams, Auth, currentAuth) {
+    .controller('QuestionsCtrl', function ($scope, Ref, $firebaseArray, $firebaseAuth, $timeout, $routeParams, Auth, User, currentAuth) {
         // synchronize a read-only, synchronized array of messages, limit to most recent 10
         $scope.questions = $firebaseArray(Ref.child('sessions/' + $routeParams.sessionID + '/Questions'));
+        Ref.child('sessions').orderByKey().equalTo($routeParams.sessionID).on("child_added", function (snapshot) {
+        $scope.currentSession = snapshot.val();
+        $scope.pinNumber = $scope.currentSession.pinNumber;
+    });
         // display any errors
         $scope.questions.$loaded().catch(alert);
         $scope.auth = currentAuth;
@@ -18,7 +22,7 @@ angular.module('angularfireApp')
             $scope.user = snapshot.key();
             $scope.username = snapshot.val().email;
             var userQuestionsPath = Ref.child('Users/' + $scope.user).child('upvotedQuestions');
-            $scope.userQuestions = $firebaseArray(Ref.child('Users/' + $scope.user).child('upvotedQuestions'));
+            $scope.userQuestions = User.getUserQuestions($scope.auth.uid) //$firebaseArray(Ref.child('Users/' + $scope.user).child('upvotedQuestions'));
             $scope.userQuestions.$loaded().then(function (userQuestions) {
                 console.log(userQuestions.length);
                 userQuestionsPath.once("value", function(snapshot){

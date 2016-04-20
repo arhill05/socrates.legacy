@@ -1,7 +1,12 @@
+'use strict';
 angular.module('angularfireApp')
   .controller('AdminQuestionsCtrl', function ($scope, Ref, $firebaseArray, $timeout, $routeParams) {
     // Get questions from current session
     $scope.questions = $firebaseArray(Ref.child('sessions/' + $routeParams.sessionID + '/Questions'));
+    Ref.child('sessions').orderByKey().equalTo($routeParams.sessionID).on("child_added", function (snapshot) {
+        $scope.currentSession = snapshot.val();
+        $scope.pinNumber = $scope.currentSession.pinNumber;
+    })
     
     // display any errors
     $scope.questions.$loaded().catch(alert);

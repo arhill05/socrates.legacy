@@ -1,3 +1,4 @@
+    <div class="container"><div class="well col-xs-2 text-center">Pin Number: {{pinNumber}}</div><br></div>
     <div class="input-group">
       <input type="text" class="form-control" style="height: 50px;" ng-model="text" placeholder="What can Socrates answer for you?">
       <span class="input-group-btn" style="height: 50px;">
@@ -17,6 +18,7 @@
         <span id="{{question.$id}}" class="glyphicon glyphicon-menu-up button-hover" style="margin: 0 auto;" ng-click="upvoteQuestion(question)" ng-disabled="question.disabled"></span>
         </span>
         </span>
+        <span class="glyphicon glyphicon-remove remove-hover" style="color: red; float: right;" ng-click="questions.$remove(question)" ng-if="isAdmin"></span>
     </li>
 </ul>
 
@@ -44,4 +46,3 @@
 
   </div>
 </div>
-

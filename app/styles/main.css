@@ -1,3 +1,74 @@
+/* Custom CSS - Quincy */
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+
+body.ng-scope {
+  background-color: #007dba;
+}
+
+.navbar.navbar-default {
+  background-color: #001925;
+}
+
+.navbar .navbar-nav .open > li {
+  background-color: #001925;
+}
+
+/* end navbar */
+
+/* image and other body */
+
+.brand-area {
+  text-align: center;
+}
+
+.brand-image {
+  max-width: 160px;
+  box-shadow: 2px 2px 2px 2px black;
+  margin: 0 auto;
+}
+
+.main-brand {
+  font-family: "Poiret One";
+  font-size: 5.5em;
+  color: white;
+}
+
+.slogan {
+  font-family: "Poiret One";
+  font-size: 2.2em;
+  color: white;
+  margin-top: -14px;
+}
+
+.input-area {
+  text-align: center;
+
+  margin: 60px;
+}
+
+.btn.btn-warning {
+  border-radius: 5px;
+  padding: 12px 50px;
+  font-size: 26px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  background-color: darkorange;
+  box-shadow: 0px 5px 0px 0px #CD6509;
+  font-family: Arial;
+}
+
+.btn.btn-warning:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+/* end body */
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -5,37 +76,44 @@
   padding: 0.2em 0;
 }
 
-body {
-  padding: 0;
-  font-size: 200% !important;
+
+
+/* nav button */
+
+button.navbar-toggle {
+  color: white;
+  background-color: #007dba;
+  padding-bottom: 5px;
+  border: 2px 2px 2px 2px white;
+
 }
 
-.button-hover:hover{
-    color: blue;
-    font-size: 125%;
+button.navbar-toggle.collapsed {
+  color: #007dba;
+  border: 0px;
+  background-color: white;
+  padding-bottom: 5px;
+  box-shadow: 2px 3px 2px #5b5b5b;
+  font-size: 12px;
 }
 
-.remove-hover{
-    font-size: 75%;
-}
+/* nav bar */
 
-.remove-hover:hover{
-    font-size: 100%
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
 
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
+  color: white;
+  font-size: 18px;
+  margin-top: -20px;
 }
+
+.small-logo {
+  max-width: 40px;
+  float: left;
+  margin: 6px 20px 0px -60px;
+}
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
@@ -46,9 +124,9 @@ body {
 
 /* Custom page footer */
 .footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
+  padding-top: 20px;
+  color: white;
+  text-align: center;
 }
 
 .container-narrow > hr {
@@ -56,14 +134,7 @@ body {
 }
 
 /* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
+
 
 /* Supporting marketing content */
 .marketing {
@@ -77,6 +148,7 @@ body {
 @media screen and (min-width: 768px) {
   .container .container-fluid {
     max-width: 730px;
+    border: 0px;
   }
 
   /* Remove the padding we set earlier */
@@ -85,10 +157,12 @@ body {
   .footer {
     padding-left: 0;
     padding-right: 0;
+    border: 0px;
   }
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
+
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {

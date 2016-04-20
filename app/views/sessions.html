@@ -1,6 +1,14 @@
 <h2>Sessions</h2>
 <div class="container-fluid">
-<ul class="list-group">
-       <li class="list-group-item col-xs-12 text-center" ng-repeat="session in sessions"><a ng-href="#/sessions/{{session.$id}}">{{session.$id}}</a></li>
-</ul>
+    <div class="container" style="width: 25%">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="PIN Number" ng-model="enteredPIN">
+            <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" ng-click="joinSession()">Join Session</button>
+      </span>
+        </div>
+    </div><br>
+    <ul class="list-group">
+        <li class="list-group-item col-xs-12 text-center" ng-repeat="session in sessions"><a ng-href="#/sessions/{{session.$id}}">{{session.$id}}</a></li>
+    </ul>
 </div>

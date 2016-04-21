@@ -1,5 +1,6 @@
 /* Custom CSS - Quincy */
 @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 
 body.ng-scope {
@@ -27,6 +28,65 @@ body.ng-scope {
   box-shadow: 2px 2px 2px 2px black;
   margin: 0 auto;
 }
+
+/* Sessions page styling */
+
+.sessions-main-brand {
+    font-family: "Poiret One";
+    font-size: 3.5em;
+    color: white;
+  }
+
+.sessions-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.panel-body {
+  background-color: #22afdc;
+  font-size: 2.2em;
+  font-family: "Montserrat", Arial;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 5px solid #ffffff;
+  box-shadow: 2px 5px 3px 0px #223322;
+}
+
+.panel-body:active {
+  font-size: 2.3em;
+  box-shadow: 0px 1px 0px 0px;
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+}
+
+.session-link {
+  color: white;
+  text-decoration: none !important;
+
+}
+
+/* Admin Sessions styling */
+
+.session-remove {
+  color: #ff1919;
+  border: 2px solid white;
+  border-radius: 20px;
+  float:right;
+}
+
+.btn.btn-warning.add-session-button {
+  margin: 20px 185px 40px;
+}
+
+.add-session-button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  box-shadow: 0px 1px 0px 0px;
+}
+
+/* */
+
+
 
 .main-brand {
   font-family: "Poiret One";

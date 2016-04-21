@@ -46,7 +46,8 @@
               <li ng-class="{ active: isActive('/')}"><a href="#/">home</a></li>
               <!-- //angularfire -->
               <li ng-class="{ active: isActive('/sessions')}" ><a ng-href="#/sessions">sessions</a></li>
-              <li ng-class="{ active: isActive('/login')}" ><a ng-href="#/login">login</a></li>
+              <li ng-hide="authData" ng-class="{ active: isActive('/login')}" ><a ng-href="#/login">login</a></li>
+              <li ng-show="authData" ng-class="{ active: isActive('/postLogin')}" ><a ng-href="#/postLogin">my account</a></li>
             </ul>
           </div>
         </div>

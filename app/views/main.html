@@ -6,6 +6,32 @@
     <p class="slogan">just ask.</p>
   </div>
   <div class="input-area">
-  <button class="btn btn-warning" ng-click="anonymousLogin()" ng-hide="auth">Start</button>
+  <button class="btn btn-warning" data-toggle="modal" data-target="#pinModal" ng-click="anonymousLogin()">Start</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="pinModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Enter Pin</h4>
+      </div>
+      <div class="modal-body">
+        <p>Enter the pin number of the session you wish to join</p>
+        <div class="input-group pin-entry">
+          <input class="form-control" ng-model="enteredPIN"></input>
+          <span class="input-group-btn">
+            <button class="btn btn-success join-button" ng-click="joinSession()" data-dismiss="modal">Go</button></span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
   </div>
 </div>

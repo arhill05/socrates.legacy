@@ -1,19 +1,31 @@
 <div class="container">
-    <div class="well lead container">Welcome {{$root.username}}!<span style="float: right;"><button class="btn btn-default" ng-click="logout()">Logout</button>
-<a class="btn btn-default" ng-href="#/create">Create Session</a></span></div>
-<div class="row"><div class="alert alert-warning col-xs-6 col-xs-offset-3"><p><strong>My Sessions</strong></p></div></div>
-<div class="row col-xs-4 col-xs-offset-4">
-  <div class="progress" ng-hide="hideSessions">
-    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70"
-    aria-valuemin="0" aria-valuemax="100" style="width:70%">
-      Loading...
+    <div class="container paper padding col-xs-8 col-xs-offset-2 profile-header" style="color: #E9E9E9">
+        <h2>Welcome {{$root.username}}!</h2>
+        <h3>Here is a list of your sessions</h3>
+        <span style="float: right;">
+            <button class="btn btn-default btn-sm" ng-click="logout()">Logout</button>
+            <a class="btn btn-default btn-sm" ng-href="#/create">Create Session</a>
+        </span>
     </div>
-  </div>
-</div>
+    <div class="row col-xs-4 col-xs-offset-4">
+        <div class="progress" ng-hide="hideSessions">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="70"
+                 aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                Loading...
+            </div>
+        </div>
+    </div>
     <ul class="list-group" ng-show="hideSessions">
-        <li class="list-group-item col-xs-12 text-center" ng-repeat="session in userSessions"><a ng-href="#/admin/sessions/{{session.$id}}">{{session.$id}}</a></li>
+        <div class="col-xs-6 col-xs-offset-3" ng-repeat="session in userSessions">
+            <div>
+                <a class="panel-body col-xs-10 text-center ng-scope pretty-link" ng-href="#/admin/sessions/{{session.$id}}">{{session.$id}}</a>
+                <button class="btn btn-small btn-danger col-xs-1" ng-click="session.confirmRemove = true;" style="margin: 4px 4px">X</button>
+            </div>
+            <div class="col-xs-9 paper padding alert-warning" ng-show="session.confirmRemove">
+                Are you sure you want to remove this?
+                <button ng-click="sessions.$remove(session)" class="btn btn-default btn-sm" style="margin-right: 4px">Yes</button>
+                <button class="btn btn-default btn-sm" ng-click="session.confirmRemove = false;">No</button>
+            </div>
+        </div>
     </ul>
-
-
-
 </div>

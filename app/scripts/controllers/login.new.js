@@ -1,4 +1,4 @@
-'use strict;'
+'use strict'
 
 angular.module('angularfireApp')
     .controller('LoginCtrl', function ($scope, Ref, $firebaseArray, $timeout, $firebaseAuth, Auth) {

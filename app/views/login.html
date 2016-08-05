@@ -1,6 +1,13 @@
-<div>
-    <p><input class="form-control" ng-model="email" placeholder="Enter email" type="email" required="required" /></p>
-    <p><input class="form-control" ng-model="password" placeholder="Enter password" type="password" required="required" /></p>
-    <button class="btn btn-default" ng-click="login()">Login</button>
-    <button class="btn btn-default" ng-click="signUp()">Sign Up</button>
+<div class="container">
+    <div class="paper padding profile-header">
+        <h2>Login</h2>
+        <p>
+            <input class="login-input" id="username-input" ng-model="email" placeholder="Enter email" type="email" required="required" />
+        </p>
+        <p>
+            <input class="login-input" id="password-input" ng-model="password" placeholder="Enter password" type="password" required="required" />
+        </p>
+            <button class="btn btn-default" id="login-button" type="submit" ng-click="login()">Login</button>
+            <button class="btn btn-default" ng-click="signUp()">Sign Up</button>
+    </div>
 </div>

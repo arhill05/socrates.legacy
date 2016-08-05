@@ -4,106 +4,151 @@
 
 
 body.ng-scope {
-  background-color: #007dba;
+    background-color: #3299BB;
 }
 
 .navbar.navbar-default {
-  background-color: #001925;
+    background-color: #001925;
+}
+
+.session-pin-input {
+    width: 50%;
+    height: 40px;
+    border: 2px solid #E9E9E9;
+    padding-left: 4px;
+    font-family: "Montserrat", Arial;
+    color: #424242
+}
+
+.login-input {
+    width: 100%;
+    height: 40px;
+    border: 2px solid #E9E9E9;
+    padding-left: 4px;
+    color: #424242;
 }
 
 .navbar .navbar-nav .open > li {
-  background-color: #001925;
+    background-color: #001925;
 }
 
 /* end navbar */
 
 /* image and other body */
+.profile-header {
+    background-color: #FF9900 !important;
+    font-family: "Montserrat", Arial;
+    border: 5px solid #E9E9E9;
+    border-radius: 10px;
+}
 
 .brand-area {
-  text-align: center;
+    text-align: center;
+}
+
+.pretty-link {
+    text-decoration: none;
+    color: #E9E9E9;
 }
 
 .brand-image {
-  max-width: 160px;
-  box-shadow: 2px 2px 2px 2px black;
-  margin: 0 auto;
+    max-width: 160px;
+    box-shadow: 2px 2px 2px 2px black;
+    margin: 0 auto;
 }
 
 /* Sessions page styling */
 
 .sessions-main-brand {
-    font-family: "Poiret One";
+    font-family: "Montserrat", Arial;
     font-size: 3.5em;
-    color: white;
-  }
-
-.sessions-container {
-  max-width: 700px;
-  margin: 0 auto;
+    color: #E9E9E9;
 }
 
+.sessions-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.sessions-caption {
+    color: #E9E9E9;
+    font-family: "Montserrat", Arial;
+    font-size: 16px;
+}
+
+.paper {
+    background: #fff;
+    border-radius: 2px;
+    margin: 1rem;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.padding {
+    padding: 24px;
+}
 
 .pin-entry {
-  margin: 15px auto 10px auto;
-  max-width: 700px;
+    margin: 15px auto 10px auto;
+    max-width: 700px;
 }
 
 .join-button {
-  font-family: "Montserrat", Arial;
-  box-shadow: 2px 2px 2px 0px #376e37;
-  margin-left: 8px !important;
-  border-top-left-radius: 3px !important;
-  border-bottom-left-radius: 3px !important;
-  font-size: 22px !important;
-  padding: 3px 9px 3px 9px !important;
-
+    font-family: "Montserrat", Arial;
+    box-shadow: 2px 2px 2px 0px #376e37;
+    margin-left: 8px !important;
+    margin-bottom: 6px;
+    border-top-left-radius: 3px !important;
+    border-bottom-left-radius: 3px !important;
+    font-size: 22px !important;
+    padding: 3px 9px 3px 9px !important;
 }
 
-.join-button:active {
-  transform: translate(0px, 2px);
-  -webkit-transform: translate(0px, 2px);
-  box-shadow: 0px 1px 0px 0px;
-}
+    .join-button:active {
+        transform: translate(0px, 2px);
+        -webkit-transform: translate(0px, 2px);
+        box-shadow: 0px 1px 0px 0px;
+    }
 
 .panel-body {
-  background-color: #22afdc;
-  font-size: 1.9em;
-  font-family: "Montserrat", Arial;
-  margin: 10px auto;
-  border-radius: 10px;
-  border: 5px solid #ffffff;
-  box-shadow: 2px 5px 3px 0px #223322;
+    background-color: #FF9900;
+    font-size: 1.9em;
+    font-family: "Montserrat", Arial;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 5px solid #E9E9E9;
+    box-shadow: 2px 5px 3px 0px #223322;
 }
 
-.panel-body:active {
-  font-size: 2.3em;
-  box-shadow: 0px 1px 0px 0px;
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-}
+    .panel-body:active {
+        font-size: 2.3em;
+        box-shadow: 0px 1px 0px 0px;
+        transform: translate(0px, 5px);
+        -webkit-transform: translate(0px, 5px);
+    }
 
 .session-link {
-  color: white;
-  text-decoration: none !important;
+    color: #E9E9E9;
+    text-decoration: none !important;
 }
 
 /* Admin Sessions styling */
 
 .session-remove {
-  color: #ff1919;
-  border: 2px solid white;
-  border-radius: 20px;
-  float:right;
+    color: #ff1919;
+    border: 2px solid #E9E9E9;
+    border-radius: 20px;
+    float: right;
 }
 
 .btn.btn-warning.add-session-button {
-  margin: 20px 185px 40px;
+    margin: 20px 185px 40px;
 }
 
 .add-session-button:active {
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  box-shadow: 0px 1px 0px 0px;
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
 }
 
 /* */
@@ -111,51 +156,50 @@ body.ng-scope {
 
 
 .main-brand {
-  font-family: "Poiret One";
-  font-size: 5.5em;
-  color: white;
+    font-family: "Poiret One";
+    font-size: 5.5em;
+    color: white;
 }
 
 .slogan {
-  font-family: "Poiret One";
-  font-size: 2.2em;
-  color: white;
-  margin-top: -14px;
+    font-family: "Poiret One";
+    font-size: 2.2em;
+    color: white;
+    margin-top: -14px;
 }
 
 .input-area {
-  text-align: center;
-
-  margin: 60px;
+    text-align: center;
+    margin: 60px;
 }
 
 .btn.btn-warning {
-  border-radius: 5px;
-  padding: 12px 50px;
-  font-size: 26px;
-  text-decoration: none;
-  margin: 20px;
-  color: #fff;
-  position: relative;
-  display: inline-block;
-  background-color: darkorange;
-  box-shadow: 0px 5px 0px 0px #CD6509;
-  font-family: Arial;
+    border-radius: 5px;
+    padding: 12px 50px;
+    font-size: 26px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    background-color: darkorange;
+    box-shadow: 0px 5px 0px 0px #CD6509;
+    font-family: Arial;
 }
 
-.btn.btn-warning:active {
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  box-shadow: 0px 1px 0px 0px;
-}
+    .btn.btn-warning:active {
+        transform: translate(0px, 5px);
+        -webkit-transform: translate(0px, 5px);
+        box-shadow: 0px 1px 0px 0px;
+    }
 
 /* end body */
 
 .browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 
@@ -163,56 +207,55 @@ body.ng-scope {
 /* nav button */
 
 button.navbar-toggle {
-  color: white;
-  background-color: #007dba;
-  padding-bottom: 5px;
-  border: 2px 2px 2px 2px white;
-
+    color: white;
+    background-color: #007dba;
+    padding-bottom: 5px;
+    border: 2px 2px 2px 2px white;
 }
 
-button.navbar-toggle.collapsed {
-  color: #007dba;
-  border: 0px;
-  background-color: white;
-  padding-bottom: 5px;
-  box-shadow: 2px 3px 2px #5b5b5b;
-  font-size: 12px;
-}
+    button.navbar-toggle.collapsed {
+        color: #007dba;
+        border: 0px;
+        background-color: white;
+        padding-bottom: 5px;
+        box-shadow: 2px 3px 2px #5b5b5b;
+        font-size: 12px;
+    }
 
 /* nav bar */
 
 
 /* Custom page header */
 .header {
-  margin-bottom: 10px;
-  color: white;
-  font-size: 18px;
-  margin-top: -20px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 18px;
+    margin-top: -20px;
 }
 
 .small-logo {
-  max-width: 40px;
-  float: left;
-  margin: 6px 20px 0px -60px;
+    max-width: 40px;
+    float: left;
+    margin: 6px 20px 0px -60px;
 }
 
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-bottom: 19px;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
 }
 
 /* Custom page footer */
 .footer {
-  padding-top: 20px;
-  color: white;
-  text-align: center;
+    padding-top: 20px;
+    color: white;
+    text-align: center;
 }
 
 .container-narrow > hr {
-  margin: 30px 0;
+    margin: 30px 0;
 }
 
 /* Main marketing message and sign up button */
@@ -220,34 +263,34 @@ button.navbar-toggle.collapsed {
 
 /* Supporting marketing content */
 .marketing {
-  margin: 40px 0;
+    margin: 40px 0;
 }
-.marketing p + h4 {
-  margin-top: 28px;
-}
+
+    .marketing p + h4 {
+        margin-top: 28px;
+    }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container .container-fluid {
-    max-width: 730px;
-    border: 0px;
-  }
+    .container .container-fluid {
+        max-width: 730px;
+        border: 0px;
+    }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-    border: 0px;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+        border: 0px;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
 }

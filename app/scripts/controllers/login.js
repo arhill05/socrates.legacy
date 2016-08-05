@@ -1,4 +1,4 @@
-'use strict;'
+'use strict'
 
 angular.module('angularfireApp')
   .controller('LoginCtrl', function($rootScope, $scope, Ref, $firebaseArray,
@@ -32,6 +32,18 @@ angular.module('angularfireApp')
           }
         })
     }
+
+    $("#username-input").keyup(function (event) {
+        if (event.keyCode == 13) {
+            $("#login-button").click();
+        }
+    });
+
+    $("#password-input").keyup(function (event) {
+        if (event.keyCode == 13) {
+            $("#login-button").click();
+        }
+    });
 
 
 

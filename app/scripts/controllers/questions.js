@@ -3,8 +3,8 @@
 angular.module('angularfireApp')
   .controller('QuestionsCtrl', function($scope, Ref, $firebaseArray,
     $firebaseAuth, $timeout, $routeParams, Auth, User, currentAuth) {
-    $scope.isAdmin = false;
-    // synchronize a read-only, synchronized array of messages, limit to most recent 10
+      $scope.isAdmin = false;
+        $scope.session = $routeParams.sessionID;
     $scope.questions = $firebaseArray(Ref.child('sessions/' + $routeParams.sessionID +
       '/Questions'));
     Ref.child('sessions').orderByKey().equalTo($routeParams.sessionID).on(
@@ -26,9 +26,6 @@ angular.module('angularfireApp')
       console.log($scope.isAdmin);
     }
 
-    // $scope.auth.$onAuth(function(authData){
-    //     $scope.authData = authData;
-    // })
 
     $scope.userPath = Ref.child('Users');
 
@@ -41,7 +38,7 @@ angular.module('angularfireApp')
         $scope.checkAdmin();
         var userQuestionsPath = Ref.child('Users/' + $scope.user).child(
           'upvotedQuestions');
-        $scope.userQuestions = User.getUserQuestions($scope.auth.uid) //$firebaseArray(Ref.child('Users/' + $scope.user).child('upvotedQuestions'));
+        $scope.userQuestions = User.getUserQuestions($scope.auth.uid) 
         $scope.userQuestions.$loaded().then(function(userQuestions) {
           console.log(userQuestions.length);
           userQuestionsPath.once("value", function(snapshot) {

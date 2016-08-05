@@ -32,7 +32,7 @@ module.exports = function (grunt) {
         dir: 'dist',
         commit: true,
         push: true,
-        message: 'added qr codes, fixed header highlighting'
+        message: 'massive UI overhaul, separation of concerns'
         },
         pages: {
         options: {
